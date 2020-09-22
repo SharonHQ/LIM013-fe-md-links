@@ -1,0 +1,20 @@
+// without options
+{
+    "plugins": [
+        "@babel/plugin-transform-modules-commonjs"
+    ],
+    "presets": [
+        "@babel/preset-env"
+    ]
+}
+// with options
+{
+    "plugins": [
+        [
+            "@babel/plugin-transform-modules-commonjs",
+            {
+                "allowTopLevelThis": true
+            }
+        ]
+    ]
+}

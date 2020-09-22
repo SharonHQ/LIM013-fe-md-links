@@ -1,10 +1,8 @@
-const mdLinks = require('../');
-
+import mdLinks from '../mdLinks';
 
 describe('mdLinks', () => {
-
-  it('should...', () => {
-    console.log('FIX ME!');
-  });
+    it('should be path', () => {
+        expect().toEqual()
+    });
 
 });
