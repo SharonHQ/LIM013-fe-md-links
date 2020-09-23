@@ -1,25 +1,25 @@
 import { createInterface } from 'readline';
 import { readFile } from 'fs';
-import pkg from 'chalk';
+import { extname } from 'path';
+import pkg from 'marked';
 
-const { red, green } = pkg;
-const ext = /(.md)$/i;
+const marked = pkg;
 
 const captureEntry = createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-export const links = {
-  path: captureEntry.question('Enter your path: ', (url) => {
-    readFile(url, { encoding: 'utf-8' }, (error, link) => {
-      if (error) {
-        console.log(red(`${error}`));
-      } else if (!ext.exec(url)) {
-        console.log(red('Enter a markdown file path'));
+const links = {
+  path: captureEntry.question('Enter your path: ', (directory) => {
+    readFile(directory, { encoding: 'utf-8' }, (err, data) => {
+      if (err) {
+        console.log(`${err}`);
+      } else if (extname(directory) !== '.md') {
+        console.log('Enter a markdown file path');
       } else {
         console.log('datos leídos');
-        console.log(green(link));
+        console.log(marked(data));
       }
     });
   }),
