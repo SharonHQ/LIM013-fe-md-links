@@ -1,9 +1,11 @@
 import { createInterface } from 'readline';
 import { readFile } from 'fs';
 import { extname } from 'path';
+import jsdom from 'jsdom';
 import pkg from 'marked';
 
 const marked = pkg;
+const { JSDOM } = jsdom;
 
 const captureEntry = createInterface({
   input: process.stdin,
@@ -16,10 +18,14 @@ const links = {
       if (err) {
         console.log(`${err}`);
       } else if (extname(directory) !== '.md') {
-        console.log('Enter a markdown file path');
+        console.log('Enter a markdown file path please');
       } else {
-        console.log('datos leídos');
-        console.log(marked(data));
+        const htmlFile = marked(data);
+        const dom = new JSDOM(htmlFile);
+        const link = dom.window.document.querySelectorAll('a');
+        for (let i = 0; i < link.length; i += 1) {
+          console.log(link[i].getAttribute('href'));
+        }
       }
     });
   }),
