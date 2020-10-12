@@ -46,6 +46,9 @@ describe('getMdFiles', () => {
   it('should return all files', () => {
     expect(getMdFiles('readme.md')).toEqual(['D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\readme.md']);
   });
+  it('should return all files', () => {
+    expect(getMdFiles('testing-files\\md-files')).toEqual(["D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\testing-files\\md-files\\md-files2\\md-files3\\mdprueba.md", "D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\testing-files\\md-files\\md-files2\\mdprueba.md", "D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\testing-files\\md-files\\mdprueba.md"]);
+  });
 });
 
 describe('getMdlinks', () => {

@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 // eslint-disable-next-line import/extensions
 import mdLinks from './md-links.js';
 // eslint-disable-next-line import/extensions
@@ -10,7 +11,7 @@ const handler = (path, options) => {
       let broken = 0;
       links.forEach((link) => {
         if (options.validate === undefined && options.stats === undefined) {
-          console.log(link.file, link.href, link.text);
+          console.log(chalk.magenta(link.file, link.href, link.text));
         }
         if (options.validate === true && options.stats === undefined) {
           console.log(link.file, link.href, link.statusText, link.status, link.text);
@@ -27,7 +28,8 @@ const handler = (path, options) => {
         console.log(stats(linkhref));
         console.log('Broken: ', broken);
       }
-    });
+    })
+    .catch((err) => (err.code === 'ENOENT' ? console.log(chalk.red('File not found!')) : err));
 };
 
 export default handler;
