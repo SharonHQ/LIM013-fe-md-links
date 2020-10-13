@@ -1,15 +1,16 @@
 {
-    "name": "lim013-fe-md-links",
-    "version": "1.0.0",
-    "description": "This program checks the links contained and reports statistics in markdown files ",
-    "main": "index.js",
+    "name": "sharonhq-md-links",
+    "version": "1.0.2",
+    "description": "This module checks the links contained and reports statistics of markdown files ",
+    "main": "src/cli.js",
     "type": "module",
+    "bin": "src/cli.js",
     "directories": {
         "test": "test"
     },
     "scripts": {
         "test": "jest --verbose --coverage",
-        "start": "node index.js"
+        "start": "node src/cli.js"
     },
     "jest": {
         "automock": false,

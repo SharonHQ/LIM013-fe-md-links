@@ -10,13 +10,13 @@ const { JSDOM } = jsdom;
 
 export const exists = (route) => (fs.existsSync(route));
 
-export const isAbsolute = (route) => (path.isAbsolute(route) ? (route) : path.resolve(route));
+export const getAbsoluteRoute = (route) => (path.isAbsolute(route) ? (route) : path.resolve(route));
 
 export const isMdFile = (route) => (path.extname(route) === '.md');
 
 export const getMdFiles = (routeDir) => {
   let allMdFiles = [];
-  const route = isAbsolute(routeDir);
+  const route = getAbsoluteRoute(routeDir);
   if (fs.lstatSync(route).isFile()) {
     if (isMdFile(route)) allMdFiles.push(route);
   } else {

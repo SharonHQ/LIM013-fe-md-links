@@ -1,6 +1,6 @@
-[*Circulo*](https://sites.com/site/figuritasgeometricas/circulo)
+[*Circulo*](https://sites.com/site/figuritasgeometricas/circulo) 
 [*Cuadrado*](https://sites.google.com/site/figuritasgeometricas/cuadrado)
 [*Trapecio*](https://sites.google.com/site/figuritasgeometricas/trapecio)
 [*Octogono*](https://sites.google.com/site/figuritasgeometricas/octogono)
 [*Trapecio*](https://sites.google.com/site/figuritasgeometricas/trapecio)
-[*Octogono*](https://sites.google.com/site/figuritasgeometricas/octogono)
+[*Octogono*](https://sites.google.com/site/figuritasgeometricas/octo)

@@ -3,7 +3,7 @@
 /* eslint-disable quote-props */
 /* eslint-disable object-curly-newline */
 import getMdLinks, {
-  exists, isAbsolute, isMdFile, getMdFiles,
+  exists, getAbsoluteRoute, isMdFile, getMdFiles,
 } from '../src/index';
 
 describe('exists', () => {
@@ -18,12 +18,12 @@ describe('exists', () => {
   });
 });
 
-describe('isAbsolute', () => {
+describe('getAbsoluteRoute', () => {
   it('should be a function', () => {
-    expect(typeof isAbsolute).toBe('function');
+    expect(typeof getAbsoluteRoute).toBe('function');
   });
   it('should return absolute path', () => {
-    expect(isAbsolute('test/')).toBe('D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\test');
+    expect(getAbsoluteRoute('test/')).toBe('D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\test');
   });
 });
 
