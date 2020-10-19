@@ -52,16 +52,12 @@ export const validateLinks = (route) => {
   // eslint-disable-next-line no-shadow
   const validateopt = links.map((link) => fetch(link.href)
     .then((res) => ({
-      href: link.href,
-      text: link.text,
-      file: link.file,
+      ...link,
       status: res.status,
       statusText: res.statusText,
     }))
     .catch(() => ({
-      href: link.href,
-      text: link.text,
-      file: link.file,
+      ...link,
       status: 500,
       statusText: 'FAIL',
     })));

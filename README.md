@@ -1,6 +1,3 @@
-[![Forks][forks-shield]](https://github.com/SharonHQ/LIM013-fe-md-links/network/members)
-[![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/sharon-huaman-2055b4bb/)
-
 <br />
 <p align="center">
   <a href="https://github.com/SharonHQ/LIM013-fe-md-links/blob/master/README.md">
@@ -42,26 +39,26 @@ This module extracts all the links that are in a markdown file, it has two optio
 
 1. Install NPM packages
 ```sh
-npm i sharonhq-md-links
+npm i sharonhq
 ```
 
 ## Usage
 
 We will use the *md-links* command to get the links of the path.
 ```sh
-sharonhq-md-links md-links <path>
+sharonhq md-links <path>
 ```
 * ### **--validate**
 ```sh
-sharonhq-md-links md-links <path> --validate
+sharonhq md-links <path> --validate
 ```
 * ### **--stats**
 ```sh
-sharonhq-md-links md-links <path> --stats
+sharonhq md-links <path> --stats
 ```
 * ### **--validate --stats**
 ```sh
-sharonhq-md-links md-links <path> --validate --stats
+sharonhq md-links <path> --validate --stats
 ```
 
 ## Contact

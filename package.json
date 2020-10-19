@@ -1,6 +1,6 @@
 {
-    "name": "sharonhq-md-links",
-    "version": "1.0.2",
+    "name": "sharonhq",
+    "version": "1.0.4",
     "description": "This module checks the links contained and reports statistics of markdown files ",
     "main": "src/cli.js",
     "type": "module",

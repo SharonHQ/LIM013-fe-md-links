@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable quote-props */
 /* eslint-disable object-curly-newline */
+import path from 'path';
 import getMdLinks, {
   exists, getAbsoluteRoute, isMdFile, getMdFiles,
 } from '../src/index';
@@ -23,7 +24,7 @@ describe('getAbsoluteRoute', () => {
     expect(typeof getAbsoluteRoute).toBe('function');
   });
   it('should return absolute path', () => {
-    expect(getAbsoluteRoute('test/')).toBe('D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\test');
+    expect(getAbsoluteRoute('test/')).toBe(path.join(process.cwd(), 'test'));
   });
 });
 
@@ -44,10 +45,10 @@ describe('getMdFiles', () => {
     expect(typeof getMdFiles).toBe('function');
   });
   it('should return all files', () => {
-    expect(getMdFiles('readme.md')).toEqual(['D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\readme.md']);
+    expect(getMdFiles('readme.md')).toEqual([path.join(process.cwd(), 'readme.md')]);
   });
   it('should return all files', () => {
-    expect(getMdFiles('testing-files\\md-files')).toEqual(["D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\testing-files\\md-files\\md-files2\\md-files3\\mdprueba.md", "D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\testing-files\\md-files\\md-files2\\mdprueba.md", "D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\testing-files\\md-files\\mdprueba.md"]);
+    expect(getMdFiles('testing-files/md-files')).toEqual([path.join(process.cwd(), '/testing-files/md-files/md-files2/md-files3/mdprueba.md'), path.join(process.cwd(), '/testing-files/md-files/md-files2/mdprueba.md'), path.join(process.cwd(), '/testing-files/md-files/mdprueba.md')]);
   });
 });
 
@@ -56,19 +57,19 @@ describe('getMdlinks', () => {
     expect(typeof getMdLinks).toBe('function');
   });
   it('should return object links', () => {
-    expect(getMdLinks(['D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\testing-files\\md-files3\\mdprueba.md'][0])).toEqual([
+    expect(getMdLinks([path.join(process.cwd(), '/testing-files/md-files3/mdprueba.md')][0])).toEqual([
       {
         href: 'https://sites.google.com/site/figuritasgeometricas/rombo',
         text: 'Rombo',
-        file: 'D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\testing-files\\md-files3\\mdprueba.md',
+        file: path.join(process.cwd(), '/testing-files/md-files3/mdprueba.md'),
       }]);
   });
   it('should return object links', () => {
-    expect(getMdLinks(['D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\testing-files\\md-files3'][0])).toEqual([
+    expect(getMdLinks([path.join(process.cwd(), '/testing-files/md-files3')][0])).toEqual([
       {
         href: 'https://sites.google.com/site/figuritasgeometricas/rombo',
         text: 'Rombo',
-        file: 'D:\\Laboratoria\\Bootcamp\\md-links\\LIM013-fe-md-links\\testing-files\\md-files3\\mdprueba.md',
+        file: path.join(process.cwd(), '/testing-files/md-files3/mdprueba.md'),
       }]);
   });
 });

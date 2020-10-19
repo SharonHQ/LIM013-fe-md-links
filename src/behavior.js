@@ -11,7 +11,7 @@ const handler = (path, options) => {
       const linkhref = [];
       let linkBroken = 0;
       links.forEach((link) => {
-        if (link.status <= 500 || link.status > 400) linkBroken += 1;
+        if (link.status <= 500 && link.status > 400) linkBroken += 1;
         if (!options.validate && !options.stats) {
           console.log(chalk.magenta(link.file, link.href, link.text));
         }
